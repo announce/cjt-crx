@@ -1,34 +1,35 @@
 {
-  "name": "cjt",
-  "version": "1.1.0",
-  "description": "A library to convert CSV text to Jira's table notation",
-  "main": "index.js",
+  "name": "cjt-crx",
+  "version": "1.2.1",
+  "description": "A Chrome extension to get Jira table notation in clipboard from selected CSV text.",
   "dependencies": {},
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "babelify": "^8.0.0",
     "browserify": "^16.2.2",
+    "cjt": "^1.1.4",
     "intelli-espower-loader": "^1.0.1",
+    "lodash": "^4.17.10",
     "mocha": "^5.2.0",
     "npm-run-all": "^4.1.3",
     "onchange": "^4.0.0",
-    "power-assert": "^1.5.0",
     "standard": "^11.0.1",
     "uglify-js": "^3.4.0"
   },
   "scripts": {
-    "test": "npm run lint && mocha",
+    "test": "npm run lint",
     "lint": "standard --env mocha --fix",
-    "watch": "onchange '*.json' --delay 1000 'src/*' 'chrome_extension/*' -- npm run bundle",
+    "watch": "onchange '*.json' --delay 1000 'src/*' -- npm run bundle",
     "date": "date +'%Y-%m-%d %I:%M:%S'",
-    "notifyMac": "osascript -e \"display notification \\\"$(date +\"%Y-%m-%d %I:%M:%S\")\\\" with title \\\"cjt\\\"\"",
-    "build": "npm run install && npm run lint && npm run bundle && npm run compress",
-    "bundle": "npm-run-all bundle:* && npm run minify && npm run notifyMac && npm run date",
-    "bundle:image": "cp -r chrome_extension/image dist",
-    "bundle:json": "cp -r chrome_extension/*.json dist",
-    "bundle:content": "browserify chrome_extension/content.js -o tmp/content.js",
-    "bundle:background": "browserify chrome_extension/background.js -o tmp/background.js",
+    "notify:mac": "[[ \"${OSTYPE}\" = \"darwin\"* ]] && osascript -e \"display notification \\\"$(date +\"%Y-%m-%d %I:%M:%S\")\\\" with title \\\"cjt-crx\\\"\"",
+    "clean": "rm -fr dist/*.{js,json} dist/image tmp/*.js",
+    "build": "npm run bundle && npm run compress",
+    "bundle": "npm run lint && npm-run-all bundle:* && npm run minify && npm-run-all notify:* && npm run date",
+    "bundle:image": "cp -r src/image dist",
+    "bundle:json": "node src/manifest.json.js > dist/manifest.json",
+    "bundle:content": "browserify src/content.js -o tmp/content.js",
+    "bundle:background": "browserify src/background.js -o tmp/background.js",
     "minify": "npm-run-all minify:*",
     "minify:content": "uglifyjs --compress --mangle -o dist/content.min.js -- tmp/content.js",
     "minify:background": "uglifyjs --compress --mangle -o dist/background.min.js -- tmp/background.js",
@@ -54,12 +55,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/announce/cjt.git"
+    "url": "git+https://github.com/announce/cjt-crx.git"
   },
-  "author": "",
+  "author": "Kenta Yamamoto <ymkjp@jaist.ac.jp>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/announce/cjt/issues"
+    "url": "https://github.com/announce/cjt-crx/issues"
   },
-  "homepage": "https://github.com/announce/cjt#readme"
+  "homepage": "https://github.com/announce/cjt-crx#readme"
 }

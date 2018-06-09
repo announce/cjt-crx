@@ -1,8 +1,8 @@
 'use strict'
-const cjt = require('../src/cjt')
 const _ = require('lodash')
 const crypto = require('crypto')
 const path = require('path')
+const cjt = require('cjt')
 
 /**
  * https://developer.chrome.com/apps/declare_permissions#manifest

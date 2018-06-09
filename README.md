@@ -6,7 +6,7 @@ A Chrome extension to get Jira table notation in clipboard from selected CSV tex
 ## Development
 
 ```bash
-npm install && npm start
+npm start
 ```
 
 - [Developer Dashboard \- Chrome Web Store](https://chrome.google.com/webstore/developer/dashboard?hl=en-US&gl=JP)
