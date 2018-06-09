@@ -1,9 +1,12 @@
 # cjt-crx
 [![Build Status](https://travis-ci.org/announce/cjt-crx.svg?branch=master)](https://travis-ci.org/announce/cjt-crx)
+[![Chrome Web Store](https://img.shields.io/chrome-web-store/v/nimelepbpejjlbmoobocpfnjhihnpked.svg)](https://chrome.google.com/webstore/detail/pagmnllnggjajagmlelanjlbompjelmd/)
 
 A Chrome extension to get Jira table notation in clipboard from selected CSV text.
 
 [cjt \- Chrome Web Store](https://chrome.google.com/webstore/detail/pagmnllnggjajagmlelanjlbompjelmd/publish-accepted)
+
+![Screenshot](https://github.com/announce/cjt-crx/blob/master/var/Screenshot%202018-06-09%2002.14.37.png?raw=true)
 
 ## Development
 
