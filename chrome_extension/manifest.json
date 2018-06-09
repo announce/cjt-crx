@@ -1,0 +1,30 @@
+{
+  "name": "cjt",
+  "version": "1.1.0",
+  "description": "Convert selected CSV text to Jira table format.",
+  "icons": {
+    "16": "image/icon_16.png",
+    "128": "image/icon_128.png"
+  },
+  "web_accessible_resources": [
+    "image/icon_128.png"
+  ],
+  "permissions": [
+    "contextMenus",
+    "clipboardWrite",
+    "notifications",
+    "tabs",
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.min.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.min.js"],
+    "persistent": false
+  },
+  "manifest_version": 2
+}
