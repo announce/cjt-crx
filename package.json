@@ -1,6 +1,6 @@
 {
   "name": "cjt-crx",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "A Chrome extension to get Jira table notation in clipboard from selected CSV text.",
   "dependencies": {},
   "devDependencies": {
