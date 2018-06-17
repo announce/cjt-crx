@@ -19,16 +19,15 @@
           <label for="file">Select the target CSV file:</label>
           <input type="file" id="file" name="file"
                  class="form-control-file"
-                 accept="text/csv">
+                 accept="text/csv" />
         </div>
         <div class="form-group">
           <details>
             <label for="charset">Encoding charset:</label>
             <input id="charset" name="charset"
                    class="form-control"
-                   list="charset-candidates"
                    placeholder="Select charset (Default: UTF-8)"
-                   autofocus />
+                   list="charset-candidates" />
             <datalist id="charset-candidates"></datalist>
             <div class="text-secondary mt-4">Available charset:
               <ul id="available-charset"></ul>
