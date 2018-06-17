@@ -1,6 +1,6 @@
 {
   "name": "cjt-crx",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "description": "A Chrome extension to get Jira table notation in clipboard from selected CSV text.",
   "dependencies": {},
   "devDependencies": {
@@ -24,7 +24,7 @@
     "watch": "onchange '*.json' 'src/*' --delay 1000 --exclude 'src/var/*' -- npm run bundle",
     "date": "date +'%Y-%m-%d %I:%M:%S'",
     "notify:mac": "[[ \"${OSTYPE}\" = \"darwin\"* ]] && osascript -e \"display notification \\\"cjt-crx\\\"\"",
-    "clean": "rm -fr dist/*.{js,json} dist/image tmp/*.js",
+    "clean": "rm -fr {dist,tmp,src/var}/*.{js,json} dist/image",
     "build": "npm run clean && npm run bundle && npm run compress",
     "bundle": "npm run lint && npm-run-all generate:* && npm-run-all bundle:* && npm run minify && npm-run-all notify:* && npm run date",
     "bundle:image": "rsync -aP src/image dist",
