@@ -1,6 +1,6 @@
 {
   "name": "cjt-crx",
-  "version": "1.2.3",
+  "version": "2.0.1",
   "description": "A Chrome extension to get Jira table notation in clipboard from selected CSV text.",
   "dependencies": {},
   "devDependencies": {
@@ -10,6 +10,7 @@
     "browserify": "^16.2.2",
     "cjt": "^1.2.1",
     "intelli-espower-loader": "^1.0.1",
+    "jquery": "^3.3.1",
     "lodash": "^4.17.10",
     "mocha": "^5.2.0",
     "npm-run-all": "^4.1.3",
@@ -19,23 +20,27 @@
   },
   "scripts": {
     "test": "npm run lint",
-    "lint": "standard --env mocha --fix",
-    "watch": "onchange '*.json' --delay 1000 'src/*' -- npm run bundle",
+    "lint": "standard --fix",
+    "watch": "onchange '*.json' 'src/*' --delay 1000 --exclude 'src/var/*' -- npm run bundle",
     "date": "date +'%Y-%m-%d %I:%M:%S'",
-    "notify:mac": "[[ \"${OSTYPE}\" = \"darwin\"* ]] && osascript -e \"display notification \\\"$(date +\"%Y-%m-%d %I:%M:%S\")\\\" with title \\\"cjt-crx\\\"\"",
+    "notify:mac": "[[ \"${OSTYPE}\" = \"darwin\"* ]] && osascript -e \"display notification \\\"cjt-crx\\\"\"",
     "clean": "rm -fr dist/*.{js,json} dist/image tmp/*.js",
-    "build": "npm run bundle && npm run compress",
-    "bundle": "npm run lint && npm-run-all bundle:* && npm run minify && npm-run-all notify:* && npm run date",
-    "bundle:image": "cp -r src/image dist",
-    "bundle:json": "node src/manifest.json.js > dist/manifest.json",
+    "build": "npm run clean && npm run bundle && npm run compress",
+    "bundle": "npm run lint && npm-run-all generate:* && npm-run-all bundle:* && npm run minify && npm-run-all notify:* && npm run date",
+    "bundle:image": "rsync -aP src/image dist",
+    "bundle:html": "rsync -aP src/*.html dist",
+    "generate:charset": "node script/charset.js > src/var/charset.json",
+    "generate:manifest": "node script/manifest.json.js > dist/manifest.json",
     "bundle:content": "browserify src/content.js -o tmp/content.js",
     "bundle:background": "browserify src/background.js -o tmp/background.js",
+    "bundle:popup": "browserify src/popup.js -o tmp/popup.js",
     "minify": "npm-run-all minify:*",
     "minify:content": "uglifyjs --compress --mangle -o dist/content.min.js -- tmp/content.js",
     "minify:background": "uglifyjs --compress --mangle -o dist/background.min.js -- tmp/background.js",
+    "minify:popup": "uglifyjs --compress --mangle -o dist/popup.min.js -- tmp/popup.js",
     "compress": "zip -r dist.zip dist",
-    "prestart": "npm install`",
-    "start": "npm run bundle && npm run watch"
+    "prestart": "npm install",
+    "start": "npm run build && npm run watch"
   },
   "standard": {
     "globals": [

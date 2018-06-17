@@ -4,6 +4,8 @@
 !/.nvmrc
 /dist/*
 !/dist/.gitkeep
+/src/var/*
+!/src/var/.gitkeep
 /tmp/*
 !/tmp/.gitkeep
 /*.zip

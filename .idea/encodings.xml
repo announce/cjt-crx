@@ -5,9 +5,15 @@
     <file url="file://$PROJECT_DIR$/.gitignore" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/README.md" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/package.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/script/IANACHARSET.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/script/charset.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/script/manifest.json.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/background.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/content.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/conv.js" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/manifest.json" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/popup.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/popup.js" charset="UTF-8" />
     <file url="PROJECT" charset="EUC-JP" />
   </component>
 </project>
