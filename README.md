@@ -27,5 +27,6 @@ npm start
 
 * [Developer Dashboard \- Chrome Web Store](https://chrome.google.com/webstore/developer/dashboard?hl=en-US&gl=JP)
 * [Comma\-separated values \- Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values#Example)
+* [cjt \- npm](https://www.npmjs.com/package/cjt)
 * [`IANACHARSET`](https://www.iana.org/assignments/character-sets/character-sets.xhtml)
   * [character-sets spreadsheet](https://docs.google.com/spreadsheets/d/16yhgi0mTRcB62waNoMNewsHwl0msZjX1_ZIGODCz-K8/edit?usp=sharing)
