@@ -7,7 +7,8 @@ const reader = new window.FileReader()
 $(() => {
   const $file = $('#file')
   const $charset = $('#charset')
-  const $candidates = $('#charsetCandidates')
+  const $candidates = $('#charset-candidates')
+  const $list = $('#available-charset')
   const fileChanged = (event) => {
     console.log('fileChanged:', event)
     const files = event.target.files
@@ -34,7 +35,9 @@ $(() => {
 
   _.forEach(charset, (opt) => {
     const $opt = $('<option>').val(opt)
+    const $li = $('<li>').text(opt)
     $candidates.append($opt)
+    $list.append($li)
   })
   reader.onload = () => { conv.convert(reader.result) }
   $charset.on('change', charsetChanged)
