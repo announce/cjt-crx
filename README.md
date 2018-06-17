@@ -5,7 +5,7 @@
 
 A Chrome extension to get Jira table notation in clipboard from selected CSV text.
 
-![Screenshot](https://rawgit.com/announce/cjt-crx/master/sample/menu.png?raw=true)
+![Screenshot](https://rawgit.com/announce/cjt-crx/master/sample/screenshot.png?raw=true)
 
 ## Installation
 
