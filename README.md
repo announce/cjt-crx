@@ -1,4 +1,5 @@
 # cjt-crx
+
 [![Build Status](https://travis-ci.org/announce/cjt-crx.svg?branch=master)](https://travis-ci.org/announce/cjt-crx)
 [![Chrome Web Store](https://img.shields.io/chrome-web-store/v/pagmnllnggjajagmlelanjlbompjelmd.svg)](https://chrome.google.com/webstore/detail/pagmnllnggjajagmlelanjlbompjelmd/)
 
@@ -24,7 +25,7 @@ col B1,col B2,col B3
 npm start
 ```
 
-- [Developer Dashboard \- Chrome Web Store](https://chrome.google.com/webstore/developer/dashboard?hl=en-US&gl=JP)
-- [Comma\-separated values \- Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values#Example)
-- [`IANACHARSET`](https://www.iana.org/assignments/character-sets/character-sets.xhtml)
-  - https://docs.google.com/spreadsheets/d/16yhgi0mTRcB62waNoMNewsHwl0msZjX1_ZIGODCz-K8/edit?usp=sharing
+* [Developer Dashboard \- Chrome Web Store](https://chrome.google.com/webstore/developer/dashboard?hl=en-US&gl=JP)
+* [Comma\-separated values \- Wikipedia](https://en.wikipedia.org/wiki/Comma-separated_values#Example)
+* [`IANACHARSET`](https://www.iana.org/assignments/character-sets/character-sets.xhtml)
+  * [character-sets spreadsheet](https://docs.google.com/spreadsheets/d/16yhgi0mTRcB62waNoMNewsHwl0msZjX1_ZIGODCz-K8/edit?usp=sharing)
